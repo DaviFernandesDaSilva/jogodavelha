@@ -87,22 +87,33 @@ function Square(props) {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
+      var empate;
   
       const moves = history.map((step, move) => {
         const desc = move ?
           'Ir para o movimento #' + move :
           'Ir para o ínicio do jogo';
+
+        if(move === 9){
+          
+            empate = true;
+          
+        }
         return (
-          <li key={move}>
-            <button onClick={() => this.jumpTo(move)}>{desc}</button>
-          </li>
+          <div class="buttons" key={move}>
+            <button class="bn59" onClick={() => this.jumpTo(move)}>{desc}</button>
+          </div>
         );
       });
   
       let status;
       if (winner) {
         status = "Vencedor: " + winner;
-      } else {
+      } else if(empate){
+
+        status = "Empate!";        
+
+      }  else {
         status = "Próximo Jogador: " + (this.state.xIsNext ? "X" : "O");
       }
   
@@ -115,7 +126,7 @@ function Square(props) {
             />
           </div>
           <div className="game-info">
-            <div>{status}</div>
+            <div class="negrito">{status}</div>
             <ol>{moves}</ol>
           </div>
         </div>
@@ -124,7 +135,6 @@ function Square(props) {
   }
   
   // ========================================
-  
   ReactDOM.render(<Game />, document.getElementById("root"));
   
   function calculateWinner(squares) {

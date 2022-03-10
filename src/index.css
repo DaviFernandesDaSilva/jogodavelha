@@ -1,12 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     margin: 20px;
+  }
+
+  .negrito {
+    font-weight: bold;
   }
   
   ol, ul {
+    
     padding-left: 30px;
   }
+
+  .buttons{
+    display: flex;
+	  flex-direction: column;
+	  transform: rotatex(10deg);
+  	animation: rotateAngle 6s linear infinite;
+  }
   
+    button{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .bn59 {
+      background-color: #141414;
+      border: 1px solid rgba(54, 54, 54, 0.6);
+      font-weight: 600;
+      position: relative;
+      outline: none;
+      border-radius: 20px;
+      display: flex;
+      font-size:10px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 1;
+      min-height: 20px;
+      padding: 5px;
+      color:white;
+    }
+
+
   .board-row:after {
     clear: both;
     content: "";
@@ -19,9 +57,9 @@ body {
   
   .square {
     background: #fff;
-    border: 1px solid #999;
+    border: 1px solid black;
     float: left;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     line-height: 34px;
     height: 34px;
